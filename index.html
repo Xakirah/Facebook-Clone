@@ -32,31 +32,39 @@
         $('#input-post').val('')
     }
     function menuModal() {
-        let status = $('#menu-modal').css('display')
-        if (status == 'block') {
-            $('#menu-modal').hide()
+        let menuStatus = $('#menu-modal').css('display');
+        let accountStatus = $('#account-modal').css('display');
+    
+        if (menuStatus == 'block') {
+            $('#menu-modal').hide();
+            $('#gnb-image').attr('src', './gnb/6.png');
         } else {
-            $('#menu-modal').show()
-        }
-    }
-    function menuModal() {
-        let status = $('#menu-modal').css('display')
-        if (status == 'block') {
-            $('#menu-modal').hide()
-            $('#gnb-image').attr('src', './gnb/6.png')
-        } else {
-            $('#menu-modal').show()
+            $('#menu-modal').show();
             $('#gnb-image').attr('src', './gnb/10.png');
+    
+            if (accountStatus == 'block') {
+                $('#account-modal').hide();
+            }
         }
     }
     function accountModal() {
-        let status = $('#account-modal').css('display')
-        if (status == 'block') {
-            $('#account-modal').hide()
-            
+        let accountStatus = $('#account-modal').css('display');
+        let menuStatus = $('#menu-modal').css('display');
+    
+        if (accountStatus == 'block') {
+            $('#account-modal').hide();
+    
+            if (menuStatus == 'block') {
+                $('#menu-modal').hide();
+                $('#gnb-image').attr('src', './gnb/6.png');
+            }
         } else {
-            $('#account-modal').show()
-            
+            $('#account-modal').show();
+    
+            if (menuStatus == 'block') {
+                $('#menu-modal').hide();
+                $('#gnb-image').attr('src', './gnb/6.png');
+            }
         }
     }
 </script>
